@@ -79,20 +79,61 @@ main {
 }
 
 .task_content {
-  padding: 0.5rem 0.2rem;
-  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: row;
   border: 1px solid #eaecf0;
   background-color: #fff;
+  justify-content: space-between;
+  /* width: 100%; */
+}
+
+.task_text {
+  width: 100%;
+  border: none;
+  padding: 0.5rem 0.3rem;
+  border-radius: 0.3rem;
   display: flex;
   color: #0d1421;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5rem;
+  display: flex;
+  font-family: Inter;
 }
 
-.card_body_add_button button {
+.task_del_button {
+  gap: 1rem;
+  display: none;
   border: none;
+  background-color: rgb(255, 255, 255);
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.add_tiket {
+  border: none;
+  display: block;
   background-color: rgb(236, 230, 230);
   cursor: pointer;
 }
+
+.task_content:hover .task_del_button {
+  display: block;
+}
+
+
+.task_content.dragged {
+  border-radius: 10px;
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+  background: #fff;
+}
+
+/* .task_content.dragged {
+  position: absolute;
+  display: inline-block;
+  background-color: rgb(236, 230, 230);
+} */
