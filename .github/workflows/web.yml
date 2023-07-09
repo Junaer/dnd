@@ -19,7 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16-alpine]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -30,7 +30,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install --dev
+        run: npm install
 
       - name: Run test
         run: npm run coverage
