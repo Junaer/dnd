@@ -1,5 +1,27 @@
 let button_add_tiket = document.querySelectorAll(".add_tiket");
 
+let actualElement;
+
+const onMouseOver = (e) => {
+    actualElement.style.top = e.clientY + 'px'
+    actualElement.style.left = e.clientX + 'px'
+};
+
+const onMouseUp = (e) => {
+    const mouseUpItem = e.target;
+    try {mouseUpItem.querySelector('.card_body_content').appendChild(actualElement)
+    }catch(e) {
+        mouseUpItem.parentElement.insertBefore(mouseUpItem, actualElement)
+    }
+
+    actualElement.classList.remove('dragged');
+
+    actualElement = undefined;
+
+    document.documentElement.removeEventListener('mouseup', onMouseUp);
+    document.documentElement.removeEventListener('mouseover', onMouseOver);
+};
+
 button_add_tiket.forEach((element) => {
   element.addEventListener("click", (event) => {
     let cardsList = event.target.parentElement.querySelector(".card_body_content");
@@ -28,27 +50,7 @@ button_add_tiket.forEach((element) => {
         finishText.textContent = textValue
         div.appendChild(finishText)
 
-    let actualElement;
 
-    const onMouseOver = (e) => {
-        actualElement.style.top = e.clientY + 'px'
-        actualElement.style.left = e.clientX + 'px'
-    };
-
-    const onMouseUp = (e) => {
-        const mouseUpItem = e.target;
-        try {mouseUpItem.querySelector('.card_body_content').appendChild(actualElement)
-        }catch(e) {
-            mouseUpItem.parentElement.insertBefore(mouseUpItem, actualElement)
-        }
-
-        actualElement.classList.remove('dragged');
-
-        actualElement = undefined;
-
-        document.documentElement.removeEventListener('mouseup', onMouseUp);
-        document.documentElement.removeEventListener('mouseover', onMouseOver);
-    };
 
     
     finishText.addEventListener('mousedown', (e) => {
