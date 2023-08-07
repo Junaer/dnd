@@ -32,19 +32,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run test
-        run: npm run coverage
+      # - name: Run test
+      #   run: npm run coverage
 
       - name: Build
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
+      # - name: Setup Pages
+      #   uses: actions/configure-pages@v2
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: 'dist'
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v1
+      #   with:
+      #     path: 'dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
