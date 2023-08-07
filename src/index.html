@@ -1,60 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
-
 <body>
-    <main>
-        <div id="card_body" class="todo_card_body">
-
-            <div id="card_body_nav" class="todo_card_body_nav">
-                <h1 class="card_name">TODO</h1>
-                <button class="card_body_menu_button">...</button>
-            </div>
-
-            <div class="card_body_content">
-                
-            </div>
-            <button class="add_tiket">+ Add another card</button>
-
-        </div>
-
-        <div id="card_body" class="in_progress_card_body">
-
-            <div id="card_body_nav" class="inprogress_card_body_nav">
-                <h2 class="card_name">IN PROGRESS</h2>
-                <button class="card_body_menu_button">...</button>
-            </div>
-
-            <div class="card_body_content">
-
-            </div>
-                <button class="add_tiket">+ Add another card</button>
-
-        </div>
-
-        <div id="card_body" class="done_card_body">
-
-            <div id="card_body_nav" class="done_card_body_nav">
-                <h3 class="card_name">DONE</h3>
-                <button class="card_body_menu_button">...</button>
-            </div>
-
-            <div class="card_body_content">
-
-            </div>
-                <button class="add_tiket">+ Add another card</button>
-    </main>
-    <!-- <script src="index.js"></script> -->
+<div class="app_storage">
+  <span class="save_button button_action">Save in storage</span>
+  <span class="reset_button button_action">Reset</span>
+</div>
+<div class="app_container">
+  <div class="column todo">
+    <h1 class="title">TODO</h1>
+    
+    <a class="add_card" href="#">+ Add another card</a>
+  </div>
+  <div class="column in_progress">
+    <h1 class="title">IN PROGRESS</h1>
+    
+    <a class="add_card" href="#">+ Add another card</a>
+  </div>
+  <div class="column done">
+    <h1 class="title">DONE</h1>
+    
+    <a class="add_card" href="#">+ Add another card</a>
+  </div>
+</div>
 </body>
-
 </html>
